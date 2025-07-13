@@ -1,0 +1,36 @@
+{
+    "name": "iqonic/graphina",
+    "description": "Your ultimate charts and graphs solution to enhance visual effects. Create versatile, advanced and interactive charts on your website.",
+    "authors": [
+        {
+            "name": "Iqonic Design",
+            "email": "hello@iqonic.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "kucrut/vite-for-wp": "^0.8.0"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Graphina\\": "./includes"
+        }
+    },
+    "scripts": {
+        "lint": "phpcs --standard=phpcs.xml",
+        "unit-test": [
+            "./vendor/bin/phpcs --standard=phpcs.xml . --report-full=test-report/full-result.txt   --report-summary=test-report/summary.txt "
+        ],
+        "fix": "phpcbf --standard=phpcs.xml ."
+    }
+}
